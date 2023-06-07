@@ -1,0 +1,50 @@
+const data = {
+     products: [
+        {
+            name: 'Speaker',
+            prod: 'sony-speaker',
+            image: '/images/speaker.jpg',
+            price: 120,
+            countInStock: 10,
+            brand: 'Sony',
+            rating: 4.5,
+            numReviews: 10,
+            description: 'Sony speaker waterproof',
+        },
+        {
+            name: 'Camera',
+            prod: 'door bell',
+            image: '/images/speaker.jpg',
+            price: 320,
+            countInStock: 10,
+            brand: 'Sony',
+            rating: 4.5,
+            numReviews: 10,
+            description: 'Sony speaker waterproof',
+        },
+        {
+            name: 'Sonny Speaker',
+            prod: 'car alarm',
+            image: '/images/speaker.jpg',
+            price: 220,
+            countInStock: 10,
+            brand: 'Sony',
+            rating: 4.5,
+            numReviews: 10,
+            description: 'Sony speaker waterproof',
+        },
+        {
+            name: 'Sonny Speaker',
+            prod: 'golf ball',
+            image: '/images/speaker.jpg',
+            price: 920,
+            countInStock: 10,
+            brand: 'Sony',
+            rating: 4.5,
+            numReviews: 10,
+            description: 'Sony speaker waterproof',
+        },
+     ],
+};
+
+export default data;
