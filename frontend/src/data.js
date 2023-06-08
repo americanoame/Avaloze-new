@@ -12,8 +12,8 @@ const data = {
             description: 'Sony speaker waterproof',
         },
         {
-            name: 'Camera',
-            prod: 'door bell',
+            name: 'americano',
+            prod: 'door-bell',
             image: '/images/speaker.jpg',
             price: 320,
             countInStock: 10,
@@ -23,8 +23,8 @@ const data = {
             description: 'Sony speaker waterproof',
         },
         {
-            name: 'Sonny Speaker',
-            prod: 'car alarm',
+            name: 'Hondola',
+            prod: 'car-alarm',
             image: '/images/speaker.jpg',
             price: 220,
             countInStock: 10,
@@ -34,8 +34,8 @@ const data = {
             description: 'Sony speaker waterproof',
         },
         {
-            name: 'Sonny Speaker',
-            prod: 'golf ball',
+            name: 'Callowly',
+            prod: 'golf-ball',
             image: '/images/speaker.jpg',
             price: 920,
             countInStock: 10,

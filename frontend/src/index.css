@@ -7,10 +7,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* header {
-  background-color: #c1b8b8;
-  padding: 1rem;
-} */
 
 .first-nav {
   background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
@@ -20,8 +16,18 @@ body {
     
 }
 
-/* header a {
-  color: #fff;
-  font-weight: bolder;
-  text-decoration: none;
-} */
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product {
+  border: 1px solid black;
+  margin: 1rem;
+
+}
+
+.product  {
+  width: 100%;
+  max-width: 400px;
+}
