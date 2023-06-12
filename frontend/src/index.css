@@ -7,6 +7,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.site-changes {
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 
 .first-nav {
   background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
@@ -30,4 +38,19 @@ body {
 .product  {
   width: 100%;
   max-width: 400px;
+}
+
+.cad-img-top {
+  max-width: 200px;
+  width: 100%;
+  
+}
+
+.add-product-page-btn {
+  background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
+  border: none;
+}
+
+.product-info {
+
 }

@@ -9,7 +9,7 @@ const data = {
             brand: 'Sony',
             rating: 4.5,
             numReviews: 10,
-            description: 'Sony speaker waterproof',
+            description: 'Sony speaker waterproof Sony speaker waterproof',
         },
         {
             name: 'americano',
