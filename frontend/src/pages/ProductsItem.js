@@ -1,13 +1,23 @@
+import {useEffect, useState} from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
-import data from '../data';
+import axios from 'axios';
+// import data from '../data';
 import { Link } from 'react-router-dom';
 
 function ProductsItem() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+      const fetchData = async () => {
+        const result = await axios.get('/api/products');
+        setProducts(result.data);
+      };
+      fetchData();
+    }, []);
   return (
     <div>
       <h1>Our Products</h1>
       <div className="products">
-        {data.products?.map((product) => (
+        {products.map((product) => (
           
             <Col className="product" key={product.prod}>
               <Link  to={`/product/${product.prod}`}>
