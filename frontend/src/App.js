@@ -7,7 +7,7 @@ import { LinkContainer } from 'react-router-bootstrap';
 function App() {
   return (
     <BrowserRouter>
-      <div className='d-flex flex-column site-changes'>
+      <div className='d-flex flex-column how-to-put-the-footer-down'>
         <Container className="d-flex justify-content-center align-items-center first-nav">
           <nav>Free delivery over $100 anywhere in the US/30 days return free</nav>
         </Container>

@@ -7,9 +7,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.site-changes {
+.how-to-put-the-footer-down {
   min-height: 100vh;
-}
+} 
 
 main {
   flex: 1;
