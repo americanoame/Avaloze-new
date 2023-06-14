@@ -1,9 +1,10 @@
 import { useEffect, useReducer } from 'react';
-import { Card, Col, Button } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 import axios from 'axios';
 // import data from '../data';
-import { Link } from 'react-router-dom';
+
 import logger from 'use-reducer-logger';
+import Product from '../components/Product'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -42,29 +43,19 @@ function ProductsItem() {
   return (
     <div>
       <h1>Our Products</h1>
-      <div className="products">
+      <div>
         {loading ? (
-          <div>Loading...(your page will be right back)</div>
+          <div>Loading... your page will be right back</div>
         ) : error ? (
           <div>{error}</div>
         ) : (
-          products.map((product) => (
-            <Col className="product" key={product.prod}>
-              <Link to={`/product/${product.prod}`}>
-                <img src={product.image} className="cad-img-top" alt={product.name} />
-              </Link>
-              <Card.Body style={{ display: 'flex', flexDirection: 'column' }} className="product-info">
-                <Link to={`/product/${product.prod}`}>
-                  <Card.Title>{product.name}</Card.Title>
-                </Link>
-                <p>{product.description}</p>
-                <Card.Text>
-                  <strong>${product.price}</strong>
-                </Card.Text>
-                <Button className="add-product-page-btn">Add to cart</Button> 
-              </Card.Body>
-            </Col>
-          ))
+          <Row>
+            {products.map((product) => (
+              <Col key={product.prod} sm={6} md={4} lg={3} className='mb-3'>
+                <Product product={product}></Product>
+              </Col>
+            ))}
+          </Row>
         )}
       </div>
     </div>
