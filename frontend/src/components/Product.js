@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
+import Rating from './Rating';
 
 function Product(props) {
   const { product } = props;
@@ -15,6 +16,7 @@ function Product(props) {
         </Link>
         <p>{product.description}</p>
         <Card.Text>
+        <Rating rating={product.rating} numReviews={product.numReviews} />
           <strong>${product.price}</strong>
         </Card.Text>
         <Button className="add-product-page-btn">Add to cart</Button> 
