@@ -19,7 +19,7 @@ const reducer = (state, action) => {
   }
 };
 
-function ProductsItem() {
+function HomeScreen() {
   const [{ loading, error, products }, dispatch] = useReducer(logger(reducer), {
     products: [],
     loading: true,
@@ -62,4 +62,4 @@ function ProductsItem() {
   );
 }
 
-export default ProductsItem;
+export default HomeScreen;

@@ -1,8 +1,9 @@
 import { Container, Navbar, Nav } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import ProductsItem from './pages/ProductsItem';
+import HomeScreen from './pages/HomeScreen';
 import { Link } from 'react-router-dom';
 import { LinkContainer } from 'react-router-bootstrap';
+import ProductScreen from './pages/ProductScreen';
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
         <main>
         <Container>
           <Routes>
-            <Route path="/" element={<ProductsItem />} />
+            <Route path="/product/:prod" element={<ProductScreen />} />
+            <Route path="/" element={<HomeScreen />} />
           </Routes>
           </Container>
         </main>
