@@ -3,6 +3,9 @@ import { useEffect, useReducer } from 'react';
 import { Col, Row, ListGroup, Card, Button, Badge } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import Rating from '../components/Rating';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import { getError } from '../utils';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -34,17 +37,18 @@ function ProductScreen() {
         const result = await axios.get(`/api/products/prod/${prod}`);
         dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
       } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: err.message });
+        dispatch({ type: 'FETCH_FAIL', payload: getError(err) });
       }
     };
     fetchData();
   }, [prod]);
 
   return loading ? (
-    <div>Loading...</div>
+    <LoadingBox /> 
   ) : error ? (
-    <div>{error}</div>
-  ) : (
+    
+    <MessageBox variant='danger'>{error}</MessageBox>
+  )  : (
     <div>
       <Row>
         <Col md={6}>
@@ -68,7 +72,7 @@ function ProductScreen() {
         </Col>
 
         <Col md={3}>
-          <Card className='mt-3'>
+          <Card>
             <Card.Body>
               <ListGroup variant='flush'>
                <ListGroup.Item>

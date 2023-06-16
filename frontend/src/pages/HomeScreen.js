@@ -5,6 +5,8 @@ import axios from 'axios';
 
 import logger from 'use-reducer-logger';
 import Product from '../components/Product'
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -45,9 +47,10 @@ function HomeScreen() {
       <h1>Our Products</h1>
       <div>
         {loading ? (
-          <div>Loading... your page will be right back</div>
+          <LoadingBox /> 
         ) : error ? (
-          <div>{error}</div>
+          
+          <MessageBox variant='danger'>{error}</MessageBox>
         ) : (
           <Row>
             {products.map((product) => (
