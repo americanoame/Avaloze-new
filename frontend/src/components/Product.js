@@ -3,8 +3,17 @@ import Button from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
 
+import {useContext} from 'react'
+import { Store } from '../Store';
+
 function Product(props) {
   const { product } = props;
+
+  const { dispatch: secondDispatch } = useContext(Store);
+  const addToCartHandler = () => {
+    secondDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity: 1 }, });
+  };
+
   return (
     <Card>
       <Link to={`/product/${product.prod}`}>
@@ -19,7 +28,8 @@ function Product(props) {
         <Rating rating={product.rating} numReviews={product.numReviews} />
           <strong>${product.price}</strong>
         </Card.Text>
-        <Button className="add-product-page-btn">Add to cart</Button> 
+        {/* <Button className={addToCartHandler}>add-product-page-btn">Add to cart</Button>  */}
+        <Button onClick={addToCartHandler} className="add-product-page-btn">Add to Cart</Button>
       </Card.Body>
     </Card>
   );
