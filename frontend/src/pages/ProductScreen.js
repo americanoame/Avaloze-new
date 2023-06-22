@@ -46,21 +46,19 @@ function ProductScreen() {
   }, [prod]);
 
   const { state, dispatch: secondDispatch } = useContext(Store);
-  const {cart} = state;
+  const { cart } = state;
   const addToCartHandler = async () => {
-      const existItem = cart.cartItems.find((duplicate) => duplicate._id === product._id);
-      const quantity = existItem ? existItem.quantity + 1 : 1;
-      const { data } = await axios.get(`/api/products/${product._id}`);
-      if (data.countInStock < quantity) {
-          window.alert('sorry. Product is out of stock');
-          return;
-      }
+    const existItem = cart.cartItems.find((duplicate) => duplicate._id === product._id);
+    const quantity = existItem ? existItem.quantity + 1 : 1;
+    const { data } = await axios.get(`/api/products/${product._id}`);
+    if (data.countInStock < quantity) {
+      window.alert('sorry. Product is out of stock');
+      return;
+    }
 
-      secondDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity }, });
-      navigate('/cart');
+    secondDispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
+    navigate('/cart');
   };
-
-
 
   return loading ? (
     <LoadingBox />
@@ -109,7 +107,7 @@ function ProductScreen() {
                   <ListGroup.Item>
                     <div className="d-grid">
                       <Button onClick={addToCartHandler} className="add-product-page-btn">
-                      {/* onClick={() => dispatch(cartAdd(prodItem))}  */}
+                        {/* onClick={() => dispatch(cartAdd(prodItem))}  */}
                         Add to Cart
                       </Button>
                     </div>
@@ -121,6 +119,8 @@ function ProductScreen() {
         </Col>
         <Col md={6}></Col>
       </Row>
+
+      
     </div>
   );
 }

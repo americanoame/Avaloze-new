@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import Rating from './Rating';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 // import {useContext} from 'react'
 // import { Store } from '../Store';
@@ -39,6 +39,8 @@ function Product(props) {
         </Card.Body>
       </Card>
 
+      
+
       {/* <Button className="btn btn-dark d-block w-100 see-more-product mt-3" onClick={() => loadMore()}>Add to Cart</Button> */}
     </div>
 
@@ -47,3 +49,28 @@ function Product(props) {
 }
 
 export default Product;
+
+/* <Container fluid className="mt-4">
+        <h1 className="text-center">The Latest</h1>
+        <Row className="row-cols-1 row-cols-md-2 g-4">
+          <Col className="col-6">
+            <Card>
+               <Card.Img src= className="card-img" alt="..." /> 
+              <Card.ImgOverlay>
+                <Card.Title>Image 1</Card.Title>
+                <Card.Text>Description of image 1.</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+
+           <Col className="col-6">
+            <Card>
+               <Card.Img src= className="card-img" alt="..." />
+              <Card.ImgOverlay>
+                <Card.Title>Image 5</Card.Title>
+                <Card.Text>Description of image 5.</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+        </Row>
+      </Container> */

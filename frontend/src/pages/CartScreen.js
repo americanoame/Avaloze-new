@@ -5,6 +5,8 @@ import MessageBox from '../components/MessageBox';
 import { Link } from 'react-router-dom';
 import  axios  from 'axios';
 
+// import img5 from "../image/main-banner.jpg";
+
 export default function CartScreen() {
   const { state, dispatch: secondDispatch } = useContext(Store);
   const {
@@ -24,6 +26,11 @@ export default function CartScreen() {
   const removeItemHandler = (item) => {
     secondDispatch({ type: 'CART_REMOVE_ITEM', payload: item });
   }
+
+//   const [ product] = useReducer(reducer, {
+//     product: [],
+    
+//   });
 
   return (
     <Row>
@@ -106,6 +113,9 @@ export default function CartScreen() {
           </Card.Body>
         </Card>
       </Col>
+
+
+      
     </Row>
   );
 }
