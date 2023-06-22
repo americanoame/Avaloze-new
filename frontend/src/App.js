@@ -61,7 +61,9 @@ function App() {
           </Container>
         </main>
         <footer>
-          <div className="text-center">all right reserved</div>
+        <p id="copyright" className="text-center twit">
+          Copyright © {new Date().getFullYear()} Avaloze.com
+        </p>
         </footer>
       </div>
     </BrowserRouter>
