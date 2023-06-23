@@ -2,12 +2,13 @@ import { useContext } from 'react';
 import { Store } from '../Store';
 import { Row, Col, ListGroup, Button, Card } from 'react-bootstrap';
 import MessageBox from '../components/MessageBox';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import  axios  from 'axios';
 
 // import img5 from "../image/main-banner.jpg";
 
 export default function CartScreen() {
+    const navigate = useNavigate();
   const { state, dispatch: secondDispatch } = useContext(Store);
   const {
     cart: { cartItems },
@@ -25,6 +26,10 @@ export default function CartScreen() {
 
   const removeItemHandler = (item) => {
     secondDispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+  }
+
+  const checkOutHandler = () => {
+    navigate('/signing?redirect=shipping');
   }
 
 //   const [ product] = useReducer(reducer, {
@@ -104,7 +109,9 @@ export default function CartScreen() {
                 <Button
                 type='button'
                 className="add-product-page-btn"
+                onClick={checkOutHandler}
                 disabled={cartItems.length === 0}
+                
                 >
                     Proceed to Checkout
                 </Button>
