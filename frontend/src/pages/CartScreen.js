@@ -15,6 +15,7 @@ export default function CartScreen() {
   } = state;
 
   const updateCartHandler = async (item, quantity) => {
+    try {
     const {data} = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {
         window.alert('sorry. Product is out of stock');
@@ -22,7 +23,10 @@ export default function CartScreen() {
     }
 
     secondDispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity }, });
+  } catch (error) {
+   console.error('Error updating product data:', error);
   }
+};
 
   const removeItemHandler = (item) => {
     secondDispatch({ type: 'CART_REMOVE_ITEM', payload: item });
