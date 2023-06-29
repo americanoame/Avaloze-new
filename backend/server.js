@@ -18,9 +18,9 @@ mongoose
 
 const app = express();
 app.use('/api/seed', seedRouter);
-app.get('/api/products', productRouter)
+app.use('/api/products', productRouter);
 
-
+ 
 
 const port = process.env.PORT || 5001;
 app.listen(port, () => {
