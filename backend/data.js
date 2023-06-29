@@ -1,7 +1,7 @@
 const data = {
      products: [
         {
-            _id: '1',
+            // _id: '1',
             name: 'Speaker',
             prod: 'sony-speaker',
             image: '/images/speaker.jpg',
@@ -13,7 +13,7 @@ const data = {
             description: 'Sony speaker waterproof',
         },
         {
-            _id: '2',
+            // _id: '2',
             name: 'americano',
             prod: 'door-bell',
             image: '/images/speaker.jpg',
@@ -25,7 +25,7 @@ const data = {
             description: 'Sony speaker waterproof',
         },
         {
-            _id: '3',
+            // _id: '3',
             name: 'Hondola',
             prod: 'car-alarm',
             image: '/images/speaker.jpg',
@@ -37,7 +37,7 @@ const data = {
             description: 'Sony speaker waterproof',
         },
         {
-            _id: '4',
+            // _id: '4',
             name: 'Callowly',
             prod: 'golf-ball',
             image: '/images/speaker.jpg',
