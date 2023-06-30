@@ -5,7 +5,7 @@ import MessageBox from '../components/MessageBox';
 import { Link, useNavigate } from 'react-router-dom';
 import  axios  from 'axios';
 
-// import img5 from "../image/main-banner.jpg";
+
 
 export default function CartScreen() {
     const navigate = useNavigate();
@@ -15,6 +15,7 @@ export default function CartScreen() {
   } = state;
 
   const updateCartHandler = async (item, quantity) => {
+    console.log(item)
     try {
     const {data} = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {

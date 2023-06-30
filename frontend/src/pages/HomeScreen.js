@@ -1,13 +1,14 @@
 import { useEffect, useReducer } from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row, Container, Card } from 'react-bootstrap';
 import axios from 'axios';
-// import data from '../data';
 
 
 import logger from 'use-reducer-logger';
 import Product from '../components/Product';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+
+const img5 = '/images/main-banner.jpg'
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -64,7 +65,30 @@ function HomeScreen() {
         )}
       </div>
 
-      
+      <Container fluid className="mt-4">
+        <h1 className="text-center">The Latest</h1>
+        <Row className="row-cols-1 row-cols-md-2 g-4">
+          <Col className="col-6">
+            <Card>
+               <Card.Img src={img5} className="card-img" alt="..." /> 
+              <Card.ImgOverlay>
+                <Card.Title>Image 1</Card.Title>
+                <Card.Text>Description of image 1.</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+
+           <Col className="col-6">
+            <Card>
+               <Card.Img src={img5} className="card-img" alt="..." />
+              <Card.ImgOverlay>
+                <Card.Title>Image 5</Card.Title>
+                <Card.Text>Description of image 5.</Card.Text>
+              </Card.ImgOverlay>
+            </Card>
+          </Col>
+        </Row>
+      </Container> 
     </div>
 
    
