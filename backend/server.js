@@ -1,8 +1,7 @@
 import express from 'express';
-import data from './data.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import seedRouter from './routes/seedRoutes.js'
+
 import productRouter from './routes/productRoutes.js'
 
 dotenv.config();
@@ -17,9 +16,8 @@ mongoose
 
 
 const app = express();
-app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
-
+// 2second when he user enter /api/seed the sseRouter will respond to it 
  
 
 const port = process.env.PORT || 5001;

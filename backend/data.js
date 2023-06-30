@@ -1,7 +1,7 @@
 const data = {
      products: [
         {
-            // _id: '1',
+            // _id: '1', 3 third part get rid of _id because they will be assing automatcaty by mongodb
             name: 'Speaker',
             prod: 'sony-speaker',
             image: '/images/speaker.jpg',
