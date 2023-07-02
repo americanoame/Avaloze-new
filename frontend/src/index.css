@@ -33,6 +33,15 @@ main {
   cursor: pointer;
 }
 
+.load-more-product {
+  background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
+  border: none;
+  padding: 6px;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+
 
 .rating {
   color: gold;
@@ -76,4 +85,13 @@ main {
 .sticky-nav {
   position: sticky;
   top: 0;
+}
+
+
+.carousel-item {
+  height: 200px;
+}
+
+.background {
+  background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
 }

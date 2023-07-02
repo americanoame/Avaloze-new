@@ -52,7 +52,7 @@ function App() {
           </Navbar>
         </header>
         <main>
-          <Container className="mt-3">
+          <Container>
             <Routes>
               <Route path="/product/:prod" element={<ProductScreen />} />
 
