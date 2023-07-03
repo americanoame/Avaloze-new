@@ -1,4 +1,4 @@
-import { Container, Navbar, Nav, Badge } from 'react-bootstrap';
+import { Container, Navbar, Nav, Badge, Row, Col, InputGroup, FormControl, Button } from 'react-bootstrap';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomeScreen from './pages/HomeScreen';
 import { Link } from 'react-router-dom';
@@ -20,20 +20,24 @@ function App() {
           <nav>Free delivery over $100 anywhere in the US/ 7 days return free</nav>
         </Container>
         <header>
-          <Navbar  bg="dark" variant="dark" expand="lg">
+          <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
               <LinkContainer to="/">
                 <Navbar.Brand>Avaloze</Navbar.Brand>
               </LinkContainer>
 
-              {/* <section className="d-flex justify-content-center align-items-center">
-                <div className="col-5 input-form mt-4">
-                  <div className="input-group">
-                    <input type="text" class="form-control" placeholder="Search Product" aria-label="Search Product" aria-describedby="basic-addon2" />
-                  </div>
-                </div>
-                <button className="d-flex justify-content-center align-items-center clear-btn">Clear filters</button>
-              </section> */}
+              <div>
+                <Row className="d-flex justify-content-start align-items-center">
+                  <Col sm={5} className="input-form">
+                    <InputGroup>
+                      <FormControl type="text" placeholder="Search Product" aria-label="Search Product" aria-describedby="basic-addon2" />
+                    </InputGroup>
+                  </Col>
+                  <Col>
+                    <Button className="d-flex justify-content-center align-items-center clear-btn">Clear filters</Button>
+                  </Col>
+                </Row>
+              </div>
 
               <Nav>
                 <Link to="/cart" className="nav-link">
@@ -63,9 +67,9 @@ function App() {
           </Container>
         </main>
         <footer>
-        <p id="copyright" className="text-center">
-          Copyright © {new Date().getFullYear()} Avaloze.com
-        </p>
+          <p id="copyright" className="text-center">
+            Copyright © {new Date().getFullYear()} Avaloze.com
+          </p>
         </footer>
       </div>
     </BrowserRouter>

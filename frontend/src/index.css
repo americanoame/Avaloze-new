@@ -92,6 +92,20 @@ main {
   height: 200px;
 }
 
-.background {
+/* .background {
   background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
+} */
+
+.clear-btn {
+  padding: 5px;
+  /* margin-top: 23px; */
+  margin-left: 3px;
+  background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
+  color: #fff;
+  border: none;
+  border-radius: 2px;
+}
+
+.input-form {
+  width: 300px;
 }
