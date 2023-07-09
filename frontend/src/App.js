@@ -8,10 +8,14 @@ import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './pages/CartScreen';
 import SigningScreen from './pages/SigningScreen';
+// import { useDispatch } from 'react-redux';
 
 function App() {
   const { state } = useContext(Store);
   const { cart } = state;
+
+  // const [query, setQuery] = useState('');
+  // const dispatch = useDispatch();
 
   return (
     <BrowserRouter>
@@ -30,11 +34,29 @@ function App() {
                 <Row className="d-flex justify-content-start align-items-center">
                   <Col sm={5} className="input-form">
                     <InputGroup>
-                      <FormControl type="text" placeholder="Search Product" aria-label="Search Product" aria-describedby="basic-addon2" />
+                      <FormControl
+                        type="text"
+                        placeholder="Search Product"
+                        aria-label="Search Product"
+                        aria-describedby="basic-addon2"
+                        // value={query}
+                        // onChange={(e) => {
+                        //   dispatch(setFilters(e.target.value));
+                        //   setQuery(e.target.value);
+                        // }}
+                      />
                     </InputGroup>
                   </Col>
                   <Col>
-                    <Button className="d-flex justify-content-center align-items-center clear-btn">Clear filters</Button>
+                    <Button
+                      className="d-flex justify-content-center align-items-center clear-btn"
+                      // onClick={() => {
+                      //   setQuery('');
+                      //   dispatch(clearFilters());
+                      // }}
+                    >
+                      Clear filters
+                    </Button>
                   </Col>
                 </Row>
               </div>
