@@ -8,6 +8,7 @@ import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './pages/CartScreen';
 import SigningScreen from './pages/SigningScreen';
+import DontShowSearchBar from './components/DontShowSearchBar';
 // import { useDispatch } from 'react-redux';
 
 function App() {
@@ -24,6 +25,8 @@ function App() {
           <nav>Free delivery over $100 anywhere in the US/ 7 days return free</nav>
         </Container>
         <header>
+        <DontShowSearchBar>
+
           <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
               <LinkContainer to="/">
@@ -31,6 +34,8 @@ function App() {
               </LinkContainer>
 
               <div>
+
+              
                 <Row className="d-flex justify-content-start align-items-center">
                   <Col sm={5} className="input-form">
                     <InputGroup>
@@ -59,6 +64,7 @@ function App() {
                     </Button>
                   </Col>
                 </Row>
+                
               </div>
 
               <Nav>
@@ -76,6 +82,8 @@ function App() {
               </Nav>
             </Container>
           </Navbar>
+
+          </DontShowSearchBar>
         </header>
         <main>
           <Container>
