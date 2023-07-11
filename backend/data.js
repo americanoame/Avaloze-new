@@ -10,7 +10,7 @@ const data = {
             brand: 'Sony',
             rating: 4.5,
             numReviews: 10,
-            description: 'Sony speaker waterproof',
+            description: 'Sony speaker waterproofborufgowgfowrfgg',
         },
         {
             // _id: '2',
@@ -41,13 +41,15 @@ const data = {
             name: 'Callowly',
             prod: 'golf-ball',
             image: '/images/speaker.jpg',
-            price: 920,
+            price: 921,
             countInStock: 3,
             brand: 'Sony',
             rating: 4.5,
             numReviews: 10,
-            description: 'Sony speaker waterproof',
+            description: 'Sony speaker waterproof product',
         },
+        
+        
         
      ],
 };
