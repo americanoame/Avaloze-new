@@ -1,69 +1,21 @@
-import React, { useEffect, useReducer, useMemo } from 'react';
+
 import { Col, Row, Container, Card, Button } from 'react-bootstrap';
-import axios from 'axios';
-import logger from 'use-reducer-logger';
+
+
 import Product from '../components/Product';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 
 const img5 = '/images/main-banner.jpg';
 
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'FETCH_REQUEST':
-      return { ...state, loading: true };
-    case 'FETCH_SUCCESS':
-      return { ...state, products: action.payload, loading: false };
-    case 'FETCH_FAIL':
-      return { ...state, loading: false, error: action.payload };
-    case 'SET_FILTERS':
-      return { ...state, filter: action.payload };
 
-      case "CLEAR_FILTER":
-      return { ...state, filter: "" };
 
-    default:
-      throw new Error("This action doesn't exist");
+function HomeScreen({filteredProducts, loading, error}) {
   
-  }
-};
-
-function HomeScreen() {
-  const [{ loading, error, products, filter }, dispatch] = useReducer(logger(reducer), {
-    products: [],
-    loading: true,
-    error: '',
-    filter: '',
-  });
-
-  useEffect(() => {
-    const fetchData = async () => {
-      dispatch({ type: 'FETCH_REQUEST' });
-      try {
-        const result = await axios.get('/api/products');
-        dispatch({ type: 'FETCH_SUCCESS', payload: result.data });
-      } catch (err) {
-        dispatch({ type: 'FETCH_FAIL', payload: err.message });
-      }
-    };
-    fetchData();
-  }, []);
-
-  const filteredProducts = useMemo(() => {
-    return products.filter((product) => {
-      if (!filter) {
-        return true;
-      }
-      return product.name.toLowerCase().includes(filter.toLowerCase());
-    });
-  }, [filter, products]);
-
   
 
+  
   return (
-
-    
-
     <div>
       <div className="container-xxl mb-2 background">
         <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
@@ -138,9 +90,7 @@ function HomeScreen() {
         ))}
       </Row>
 
-      <Button className="btn btn-dark d-block w-100 add-to-cart-btn mt-3">
-        Show More Products
-      </Button>
+      <Button className="btn btn-dark d-block w-100 add-to-cart-btn mt-3">Show More Products</Button>
     </div>
   );
 }

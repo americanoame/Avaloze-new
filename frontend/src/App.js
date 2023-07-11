@@ -8,7 +8,8 @@ import { useContext } from 'react';
 import { Store } from './Store';
 import CartScreen from './pages/CartScreen';
 import SigningScreen from './pages/SigningScreen';
-import DontShowSearchBar from './components/DontShowSearchBar';
+
+import useProducts from './data/useProducts';
 // import { useDispatch } from 'react-redux';
 
 function App() {
@@ -18,14 +19,23 @@ function App() {
   // const [query, setQuery] = useState('');
   // const dispatch = useDispatch();
 
+  const {loading,
+    
+    error,
+    filter,
+    filteredProducts,
+    dispatch,} = useProducts() 
+    console.log(filteredProducts)
   return (
     <BrowserRouter>
       <div className="d-flex flex-column how-to-put-the-footer-down ">
         <Container className="d-flex justify-content-center align-items-center first-nav">
           <nav>Free delivery over $100 anywhere in the US/ 7 days return free</nav>
         </Container>
+
+        
         <header>
-        <DontShowSearchBar>
+        
 
           <Navbar bg="dark" variant="dark" expand="lg">
             <Container>
@@ -35,8 +45,8 @@ function App() {
 
               <div>
 
-              
-                <Row className="d-flex justify-content-start align-items-center">
+              <Routes>
+                <Route path='/' element={<Row className="d-flex justify-content-start align-items-center">
                   <Col sm={5} className="input-form">
                     <InputGroup>
                       <FormControl
@@ -44,27 +54,22 @@ function App() {
                         placeholder="Search Product"
                         aria-label="Search Product"
                         aria-describedby="basic-addon2"
-                        // value={query}
-                        // onChange={(e) => {
-                        //   dispatch(setFilters(e.target.value));
-                        //   setQuery(e.target.value);
-                        // }}
+
+                        value={filter} onChange={(e) => dispatch({ type: 'SET_FILTER', payload: e.target.value })}
                       />
                     </InputGroup>
                   </Col>
                   <Col>
                     <Button
                       className="d-flex justify-content-center align-items-center clear-btn"
-                      // onClick={() => {
-                      //   setQuery('');
-                      //   dispatch(clearFilters());
-                      // }}
+                      
+                      value={filter} onClick={() => dispatch({ type: 'CLEAR_FILTER' })}
                     >
                       Clear filters
                     </Button>
                   </Col>
-                </Row>
-                
+                </Row>}/>
+              </Routes>
               </div>
 
               <Nav>
@@ -83,15 +88,16 @@ function App() {
             </Container>
           </Navbar>
 
-          </DontShowSearchBar>
+          
         </header>
+
         <main>
           <Container>
             <Routes>
               <Route path="/product/:prod" element={<ProductScreen />} />
 
               <Route path="/cart" element={<CartScreen />} />
-              <Route path="/" element={<HomeScreen />} />
+              <Route path="/" element={<HomeScreen filteredProducts={filteredProducts} loading={loading} error={error} />} />
               <Route path="/signing" element={<SigningScreen />} />
             </Routes>
           </Container>
