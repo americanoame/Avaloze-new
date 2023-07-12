@@ -82,13 +82,7 @@ function HomeScreen({filteredProducts, loading, error}) {
         </Row>
       </Container>
 
-      <Row className="mt-4">
-        {filteredProducts.map((product) => (
-          <Col key={product.prod} sm={6} md={4} lg={3} className="mb-3">
-            <Product product={product}></Product>
-          </Col>
-        ))}
-      </Row>
+      
 
       <Button className="btn btn-dark d-block w-100 add-to-cart-btn mt-3">Show More Products</Button>
     </div>

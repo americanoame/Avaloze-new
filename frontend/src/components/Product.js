@@ -55,7 +55,7 @@ function Product(props) {
             <strong>${product.price}</strong>
             {product.countInStock === 0 ? (
 
-             <Button className='bg-warning text-light text-center' disabled>
+             <Button className='bg-warning text-center btn-out-of-stock' disabled>
                 Out of Stock
              </Button>
             ) : (

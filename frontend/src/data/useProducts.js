@@ -1,9 +1,6 @@
 import { useEffect, useReducer, useMemo } from 'react';
 import axios from 'axios';
 
-
-
-
 function productReducer(state, action) {
     switch (action.type) {
       case 'FETCH_REQUEST':

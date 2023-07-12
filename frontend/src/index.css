@@ -33,6 +33,18 @@ main {
   cursor: pointer;
 }
 
+
+
+.btn-out-of-stock {
+  border: none;
+  padding: 3px;
+  text-align: center;
+  color: red;
+  cursor: pointer;
+}
+
+
+
 .load-more-product {
   background-image: linear-gradient(rgb(67, 87, 144), rgb(107, 197, 107));
   border: none;
